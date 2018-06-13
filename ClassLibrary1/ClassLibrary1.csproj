@@ -48,6 +48,7 @@
     <Compile Include="Component1.Designer.cs">
       <DependentUpon>Component1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Critica.cs" />
     <Compile Include="Director.cs" />
     <Compile Include="Estudio.cs" />
     <Compile Include="Pelicula.cs" />

@@ -17,6 +17,8 @@ namespace ClassLibrary1
         public double presupuesto { get; set; }
 
         public Estudio estudio { get; set; }
+        
+        public Critica critica { get; set; }
 
         public string DisplayP
         {

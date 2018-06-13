@@ -41,6 +41,7 @@ namespace WindowsFormsApp1
             productores = new List<Productor>();
             
             setupData();
+            dele();
             
             ini();
 
@@ -63,6 +64,14 @@ namespace WindowsFormsApp1
             peliculaActors.Add(peliculaActor1);
             PeliculaProductor peliculaProductor1 = new PeliculaProductor { productor = productor1, pelicula = peliculas[0] };
             peliculaActors.Add(peliculaActor1);
+
+
+
+            Critica c = new Critica { emisor = "dan", mensage = "estava wena" };
+            peliculas[0].critica = c;
+
+
+
             personas.Add(actor1);
             personas.Add(director1);
             personas.Add(productor1);
