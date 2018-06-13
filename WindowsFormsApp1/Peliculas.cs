@@ -24,19 +24,29 @@ namespace WindowsFormsApp1
 
 
 
-        public Peliculas()
+        public Peliculas(BaseDeDatos baseDeDatos1)
         {
             InitializeComponent();
+            baseDeDatos = baseDeDatos1;
             peliculaBinding.DataSource = baseDeDatos.peliculas;
             PeliculasLB.DataSource = peliculaBinding;
             PeliculasLB.ValueMember = "DisplayP";
             PeliculasLB.DisplayMember = "DisplayP";
 
         }
+        
+        
 
         private void button1_Click(object sender, EventArgs e)
         {
+            th = new Thread(openLogin);
+            th.SetApartmentState(ApartmentState.STA);
+            th.Start();
+        }
 
+        private void openLogin()
+        {
+            Application.Run(new Form1(baseDeDatos));
         }
     }
 }

@@ -1,0 +1,6 @@
+C:\Users\kitor\OneDrive\Desktop\movies-erriveros\ClassLibrary1\bin\Debug\ClassLibrary1.dll
+C:\Users\kitor\OneDrive\Desktop\movies-erriveros\ClassLibrary1\bin\Debug\ClassLibrary1.pdb
+C:\Users\kitor\OneDrive\Desktop\movies-erriveros\ClassLibrary1\obj\Debug\ClassLibrary1.csprojResolveAssemblyReference.cache
+C:\Users\kitor\OneDrive\Desktop\movies-erriveros\ClassLibrary1\obj\Debug\ClassLibrary1.csproj.CoreCompileInputs.cache
+C:\Users\kitor\OneDrive\Desktop\movies-erriveros\ClassLibrary1\obj\Debug\ClassLibrary1.dll
+C:\Users\kitor\OneDrive\Desktop\movies-erriveros\ClassLibrary1\obj\Debug\ClassLibrary1.pdb

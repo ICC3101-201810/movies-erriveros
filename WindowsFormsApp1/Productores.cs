@@ -20,8 +20,9 @@ namespace WindowsFormsApp1
         public BaseDeDatos baseDeDatos;
 
         BindingSource productoresBinding = new BindingSource();
-        public Productores()
+        public Productores(BaseDeDatos baseDeDatos1)
         {
+            baseDeDatos = baseDeDatos1;
             InitializeComponent();
             productoresBinding.DataSource = baseDeDatos.productores;
             ProductoresLB.DataSource = productoresBinding;
@@ -31,7 +32,14 @@ namespace WindowsFormsApp1
 
         private void button1_Click(object sender, EventArgs e)
         {
+            th = new Thread(openLogin);
+            th.SetApartmentState(ApartmentState.STA);
+            th.Start();
+        }
 
+        private void openLogin()
+        {
+            Application.Run(new Form1(baseDeDatos));
         }
     }
 }

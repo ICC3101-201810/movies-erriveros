@@ -21,10 +21,11 @@ namespace WindowsFormsApp1
         public BaseDeDatos baseDeDatos;
 
         BindingSource EstudiosBinding = new BindingSource();
-        public Estudios()
+        public Estudios(BaseDeDatos baseDeDatos1)
         {
+            
             InitializeComponent();
-            InitializeComponent();
+            baseDeDatos = baseDeDatos1;
             EstudiosBinding.DataSource = baseDeDatos.estudios;
             EstudiosLB.DataSource = EstudiosBinding;
             EstudiosLB.ValueMember = "DisplayE";
@@ -38,7 +39,13 @@ namespace WindowsFormsApp1
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            th = new Thread(openLogin);
+            th.SetApartmentState(ApartmentState.STA);
+            th.Start();
+        }
+        private void openLogin()
+        {
+            Application.Run(new Form1(baseDeDatos));
         }
     }
 }

@@ -28,6 +28,7 @@ namespace WindowsFormsApp1
         public List<Actor> actores;
         public Inicial()
         {
+           
             InitializeComponent();
             baseDeDatos = new BaseDeDatos();
             peliculas = new List<Pelicula>();
@@ -38,7 +39,12 @@ namespace WindowsFormsApp1
             peliculaActors = new List<PeliculaActor>();
             peliculaProductors = new List<PeliculaProductor>();
             productores = new List<Productor>();
+            
             setupData();
+            
+            ini();
+
+
         }
         private void openForm1()
         {
@@ -71,12 +77,21 @@ namespace WindowsFormsApp1
 
         }
 
+        private void ini()
+        {
+            System.Threading.Thread.Sleep(5000);
+            th = new Thread(openForm1);
+            th.SetApartmentState(ApartmentState.STA);
+            th.Start();
+            
+        }
+
         private void Inicial_Load(object sender, EventArgs e)
         {
 
         }
 
-        private void dele(object sender, EventArgs e)
+        private void dele()
         {
             BinaryFormatter formatter = new BinaryFormatter();
             Stream mistream = new FileStream("Personas.bin", FileMode.OpenOrCreate, FileAccess.Read, FileShare.ReadWrite);
@@ -112,16 +127,14 @@ namespace WindowsFormsApp1
             mistream3.Close();
 
             BinaryFormatter formatter4 = new BinaryFormatter();
-            Stream mistream4 = new FileStream("Personas.bin", FileMode.OpenOrCreate, FileAccess.Read, FileShare.ReadWrite);
+            Stream mistream4 = new FileStream("PeliculaProductor.bin", FileMode.OpenOrCreate, FileAccess.Read, FileShare.ReadWrite);
             if (mistream4.Length != 0)
             {
                 peliculaProductors = (List<PeliculaProductor>)formatter4.Deserialize(mistream4);
             }
             mistream4.Close();
 
-            this.Close();
-            th = new Thread(openForm1);
-            th.SetApartmentState(ApartmentState.STA);
+            
 
 
         }

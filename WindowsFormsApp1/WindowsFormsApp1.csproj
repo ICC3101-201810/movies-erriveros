@@ -31,6 +31,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>WindowsFormsApp1.Program</StartupObject>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -89,6 +92,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Actores.resx">
+      <DependentUpon>Actores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Directores.resx">
+      <DependentUpon>Directores.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Estudios.resx">
       <DependentUpon>Estudios.cs</DependentUpon>
     </EmbeddedResource>

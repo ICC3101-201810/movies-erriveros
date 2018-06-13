@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ClassLibrary1;
+using System.IO;
+using System.Runtime.Serialization.Formatters.Binary;
+using System.Threading;
 
 namespace WindowsFormsApp1
 {
@@ -14,9 +18,10 @@ namespace WindowsFormsApp1
         [STAThread]
         static void Main()
         {
+            
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new Inicial());
 
         }
     }
